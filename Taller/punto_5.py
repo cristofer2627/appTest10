@@ -21,7 +21,7 @@ def op1():
         print("Digite letra ", i)
         b=input()
         n2.insert(i,b)
-        i = i + 1
+        i = i + 1 
            
     
  
