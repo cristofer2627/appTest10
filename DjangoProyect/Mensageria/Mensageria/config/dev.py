@@ -29,3 +29,6 @@ DATABASES = {
     }
 }
 '''
+
+MEDIA_URL= '/media/'
+MEDIAROOT = os.path.join(BASE_DIR,'media')

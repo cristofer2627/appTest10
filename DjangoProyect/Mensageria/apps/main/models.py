@@ -56,3 +56,47 @@ class Post(manager):
     
     def _str_(self):
         return self.title
+
+class Web(manager, social):
+    about_us = models.TextField('About us')
+    phone =  models.CharField('Phone',max_length =10)
+    email = models.EmailField('E-mail', max_length=200)
+    class Meta:
+        verbose_name = 'Web'
+        verbose_name_plural = 'Webs'
+    def _str_(self):
+        return about_us
+
+class SocialNetworks(manager,social):
+    class Meta:
+        verbose_name = 'Social network'
+        verbose_name_plural = 'Social networks'
+    def _str_(self):
+        return self.facebook
+
+class Contact(manager):
+    firstname = models.CharField('First Name', max_length=100)
+    lastname = models.CharField('LastName', max_length=100)
+    email = models.EmailField('E-mail', max_length=150)
+    subject = models.CharField('Subject', max_length=100)
+    message = models.TextField('Message')
+    class Meta:
+        verbose_name = 'Contact'
+        verbose_name_plural = 'Contacts'
+    def _str_(self):
+        return self.subject
+
+class Suscripter (manager):
+    email = models.EmailField('E-mail', max_length=150)
+    class Meta:
+        verbose_name = 'Suscriber'
+        verbose_name_plural = 'Suscribers'
+    def _str_(self):
+        return self.email
+    
+
+
+    
+
+
+        
